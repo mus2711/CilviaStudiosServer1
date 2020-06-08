@@ -1,10 +1,13 @@
 import express from "express";
 import emaildata from "./emaildb.js";
 import emailclient from "./emailsclient.js";
-import buggycomments from "./commentdb.js";
-import buggyclient from "./commentclient.js";
-var commentArrays = buggyclient.init();
-const emailArray = emailclient.init();
+import insertcomments from "./commentdb.js";
+import commentclient from "./commentclient.js";
+var buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
+var stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
+var sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
+var c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
+var emailArray = emailclient.init();
 const port = 8080;
 const app = express();
 
@@ -16,30 +19,79 @@ app.use(express.json({limit: "20mb"}));
 
 app.get("/api", (request, response) => {
     response.json({emails: emailArray});
+    emailArray = emailclient.init();
 });
 
 app.post("/api", (request, response) => {
     console.log("I got an email.");
-    // console.log(request.body);
     emaildata.init(request.body.subscriber);
     response.json({
         status: "subscribed",
         email: request.body.subscriber
     });
+    emailArray = emailclient.init();
 });
 
-app.get("/comment", (request, response) => {
-    response.json({comments: commentArrays});
-    commentArrays = buggyclient.init();
+app.get("/buggy", (request, response) => {
+    response.json({comments: buggyArrays});
+    buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
 });
 
-app.post("/comment", (request, response) => {
+app.post("/buggy", (request, response) => {
     console.log("I got a comment");
     // console.log(request.body);
-    buggycomments.init(request.body.userName, request.body.userFeedback);
+    insertcomments.init("./db/buggycommentstest.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
     });
-    commentArrays = buggyclient.init();
+    buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
+});
+
+app.get("/stool", (request, response) => {
+    response.json({comments: stoolArrays});
+    stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
+});
+
+app.post("/stool", (request, response) => {
+    console.log("I got a comment");
+    // console.log(request.body);
+    insertcomments.init("./db/stoolcommentstest.sqlite",request.body.userName, request.body.userFeedback);
+    response.json({
+        name: request.body.userName,
+        comment: request.body.userFeedback
+    });
+    stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
+});
+
+app.get("/sleep", (request, response) => {
+    response.json({comments: sleepArrays});
+    sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
+});
+
+app.post("/sleep", (request, response) => {
+    console.log("I got a comment");
+    // console.log(request.body);
+    insertcomments.init("./db/sleepcommentstest.sqlite",request.body.userName, request.body.userFeedback);
+    response.json({
+        name: request.body.userName,
+        comment: request.body.userFeedback
+    });
+    sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
+});
+
+app.get("/c19", (request, response) => {
+    response.json({comments: c19Arrays});
+    c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
+});
+
+app.post("/c19", (request, response) => {
+    console.log("I got a comment");
+    // console.log(request.body);
+    insertcomments.init("./db/c19commentstest.sqlite",request.body.userName, request.body.userFeedback);
+    response.json({
+        name: request.body.userName,
+        comment: request.body.userFeedback
+    });
+    c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
 });
