@@ -232,7 +232,6 @@ button {
 .circle-area:hover {
     background-color: #ffd451;
 }
-
 #mainphoto {
     width: 42vw;
     height: 42vw;
@@ -266,17 +265,17 @@ button {
 #description {
     position: absolute;
     margin-left: 48vw;
-    top: 0;
-    margin-top: 12vw;
-    width: 45%;
+    top: 11vw;
+    margin-top: 0vw;
+    width: 48%;
     font-family: "ApercuProMedium";
-    font-size: 1.3vw;
+    font-size: 1.1vw;
 }
 #buttonbehance {
     position: absolute;
     margin-left: 48vw;
-    top: 0;
-    margin-top: 30vw;
+    top: 38vw;
+    margin-top: 0vw;
     width: 15vw;
     height: 3.5vw;
     border-radius: 3vw 3vw 3vw 3vw;
@@ -285,11 +284,9 @@ button {
     background-color: #053eff;
     color: white;
 }
-
 button a {
     color: white;
 }
-
 button a:visited {
     color: inherit;
 
@@ -325,7 +322,6 @@ textarea {
     margin-left: 3.2vw;
     font-weight: bold;
 }
-
 
 
 #name {
@@ -370,6 +366,7 @@ textarea {
     border-radius: 0.7vw 0.7vw 0.7vw 0.7vw;
 
 }
+
 #userpanel {
     position: absolute;
     top:0;

@@ -276,7 +276,7 @@ button {
     position: absolute;
     margin-left: 48vw;
     top: 0;
-    margin-top: 30vw;
+    margin-top: 35vw;
     width: 15vw;
     height: 3.5vw;
     border-radius: 3vw 3vw 3vw 3vw;
@@ -325,7 +325,6 @@ textarea {
     margin-left: 3.2vw;
     font-weight: bold;
 }
-
 
 
 #name {

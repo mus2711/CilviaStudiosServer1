@@ -28,15 +28,6 @@
     src: url(Fonts/TiffanyStd-Demi.otf);
 }
 
-[aos="fade"] {
-    opacity: 0;
-    transition-property: opacity;
-  }
-  
-[aos="fade"].aos-animate {
-    opacity: 1;
-}
-
 
 html, body { 
     width: 100%;
@@ -48,7 +39,6 @@ body {
 
 header {
     z-index: 1;
-    background: #6759f3;
     top: 0px;
     height: 80px;
     left: 0;
@@ -63,29 +53,18 @@ main {
     left: 0;
     position: absolute;
     width: 100%;
+    padding-bottom: 10vw;
 }
-/* footer {
-    background:black;
-    top:2260px;
-    bottom: 0;
-    height: 140px;
-    left: 0;
-    line-height: 1;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-} */
-
 
 header ul {
     list-style-type: none;
     display: inline-block;
-    padding: 10px;
+    padding: 0.6vw;
 }
 
 header ul li {
     display:inline;
-    margin:0 .3em;
+    margin: 0.6vw;
 
 }
 
@@ -103,10 +82,12 @@ button {
 
 .cilvia-header { 
     padding-top: 0px; 
-    background-color: transparent;}
+}
 
 .title-list {
-    margin-left: 20px;}
+    margin-left: 2vw;
+    margin-top:1.3vw;
+}
 
 .title-list a {
     text-decoration: none;
@@ -119,7 +100,7 @@ button {
 
 #CilviaOne {
     font-family: "ApercuProBold";
-    font-size: 25pt;
+    font-size: 2.4vw;
 }
 
 #CilviaOne:focus {
@@ -134,7 +115,7 @@ button {
     font-family: "TiffanyStdDemi";
     font-size: 25pt;
 }
-
+/* 
 #heading-line { 
     position: absolute;
     background-color: black;
@@ -144,15 +125,7 @@ button {
     width:94.5%;
     height: 3px;
     z-index: 1;
-}
-
-.circle-area {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 40px;
-    margin-top:-60px;
-}
+} */
 
 .sidenav {
     height: 100%; /* 100% Full-height */
@@ -164,19 +137,19 @@ button {
     background-color: black; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     overflow-y: hidden;
-    padding-top: 100px; /* Place content 60px from the top */
+    padding-top: 4vw; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    padding-top: 300px;
+    padding-top:21vw;
     transition: 0.8s;
 }
  
 /* The navigation menu links */
 #about, #contact, #magazine, #projects {
-    margin-top: -20px;
-    padding: 30px 8px 8px 20px;
+    margin-top: -1.5vw;
+    padding: 2vw 0.4vw 0.4vw 2vw;
     text-decoration: none;
     font-family: "ApercuProBold";
-    font-size: 30px;
+    font-size: 2.2vw;
     color:white;
     display: block;
     transition: 0.3s;
@@ -188,9 +161,10 @@ button {
     color: white;
     text-align: center;
     display: block;
-    margin-top: 60px;
-    font-size: 15px;
+    margin-top: 4.5vw;
+    font-size: 1.1vw;
     transition: 0.3s;
+    margin-left: 2vw;
 }
  
 /* When you mouse over the navigation links, change their color */
@@ -211,28 +185,20 @@ button {
 }
  
 /* Position and style the close button (top right corner) */
-.closebtn {
+.closebtn, .circle-area {
     background-color: white;
     position: absolute;
     top: 0;
-    margin-top: 32px;
+    margin-top: 2.5vw;
     right: 0px;
-    margin-right: 40px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    margin-right: 2.7vw;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%
 }
 
 .circle-area {
-    background-color: black;
-    position: absolute;
-    top: 0;
-    margin-top: 32px;
-    right: 0px;
-    margin-right: 40px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;  
+    background-color: black; 
 }
 
 .circle-area:hover {
@@ -244,14 +210,18 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 740px;
+    width: 50%;
     height:826px;
     background-color: transparent;
 }
 
 main img {
     width: 100%;
-    height:auto;
+    height: 100%;
+    /* height:auto; */
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
 }
 
 #mission {
@@ -263,7 +233,7 @@ main img {
     font-family: "TiffanyStdDemi";
     height: 826px;
 }
-
+/* 
 #mission-moinor {
     position: absolute;
     left: 0;
@@ -272,14 +242,14 @@ main img {
     background-color: #ffd451;
     font-family: "TiffanyStdDemi";
     height: 896px;
-}
+} */
 
 h1 {
     position: absolute;
-    top: 100px;
-    left: 90px;
+    top: 8vw;
+    left: 5vw;
     color:black;
-    font-size: 90px;
+    font-size: 7vw;
 }
 
 
@@ -287,21 +257,22 @@ h4 {
     font-family: "ApercuProMedium";
     /* font-weight: bold; */
     position: absolute;
-    top: 350px;
-    left: 90px;
+    top: 25vw;
+    left: 5vw;
     color:black;
-    font-size: 45px;
+    font-size: 3vw;
     width: 70%;
 }
 #project-blocks {
+
     position: absolute;
     top:826px;
-    width: 1440px;
+    width: 100%;
     left: 0px;
 }
 .blocks {
-    width: 500px;
-    height: 500px;
+    width: 35vw;
+    height: 35vw;
 }
 
 /* .blocks img {
@@ -333,15 +304,14 @@ h4 {
     position: absolute;
     left: 110px;
     top: 1330px;
-    
 }
 #block6 {
     position: absolute;
     right: 110px;
     top: 1330px;
     padding-bottom: 110px;
+    border-color: none;
 }
-
 .blocks a {
     font-family: "TiffanyStdDemi";
     color: white;
@@ -360,4 +330,43 @@ h4 {
 
 .blocks:hover a {
     opacity: 1;
+}
+
+@media only screen and (max-width: 1300px) {
+    .blocks {
+        width: 45vw;
+        height: 45vw;
+    }
+    #block1 {
+        position: absolute;
+        left: 28%;
+        top: 5vw;
+    }
+    #block2 {
+        position: absolute;
+        left: 28%;
+        top: 60vw;
+    }
+    #block3 {
+        position: absolute;
+        left: 28%;
+        top: 115vw;
+    }
+    #block4 {
+        position: absolute;
+        left: 28%;
+        top: 170vw;
+    }
+    #block5 {
+        position: absolute;
+        left: 28%;
+        top: 225vw;
+        
+    }
+    #block6 {
+        position: absolute;
+        left: 30%;
+        top: 280vw;
+        padding-bottom: 110px;
+    }
 }

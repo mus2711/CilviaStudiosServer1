@@ -4,7 +4,9 @@ styling.init = function() {
     const el = function (id) {
         return document.getElementById(id);
     };
-
+    const cl = function (classname) {
+        return document.getElementsByClassName(classname);
+    };
     function openNav() {
         const elements = document.getElementsByClassName("nav-list");
         for (var i= 0; i < elements.length; i++) {
@@ -26,7 +28,27 @@ styling.init = function() {
 
     el("circle-base").addEventListener("click", openNav)
     el("circle-nav").addEventListener("click", closeNav)
-
+    el("circle-base").addEventListener("keyup", function (e) {
+        var key = e.which || e.keyCode;
+        switch (key) {
+        case 13:
+            console.log("enter pressed");
+            openNav();
+            break;
+        }
+    });
+    el("circle-nav").addEventListener("keyup", function (e) {
+        var key = e.which || e.keyCode;
+        switch (key) {
+        case 13:
+            console.log("enter pressed");
+            closeNav();
+            break;
+        }
+    });
+    el("main").addEventListener("click", closeNav);
+    // el("contact-us").addEventListener("click", closeNav);
+    // cl("blocks").addEventListener("click", closeNav);
 }
 
 export default Object.freeze(styling);

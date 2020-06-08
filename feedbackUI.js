@@ -1,6 +1,6 @@
 const feedbackUI = Object.create(null);
 
-feedbackUI.init = async function () {
+feedbackUI.init = async function (serverid) {
     console.log("feedbackUI running");
     const el = (id) => document.getElementById(id);
     const cloneTemplate = (id) => document.importNode(el(id).content, true);
@@ -12,11 +12,11 @@ feedbackUI.init = async function () {
     const usercomments = el("usercomments");
 
     const getData = async function() {
-        const response = await fetch("/comment");
+        const response = await fetch(serverid);
         let json = await response.json();
         return json;
     }
-    const theComments = async function() { 
+    const theComments = async function() {
         let CommentList = await getData();
         return CommentList;
     };
@@ -38,11 +38,9 @@ feedbackUI.init = async function () {
     var counterCommentNumber = 0;
     el("commentbutton").onclick = async function () {
         const userName = name.value;
-        const userEmail = email.value;
         const userFeedback = feedback.value;
         if (name.value !== "") {
             if(userFeedback !== "") {
-                
                 console.log("clicked");
                 const data = {userName, userFeedback};
                 const options = {
@@ -53,7 +51,7 @@ feedbackUI.init = async function () {
                     body: JSON.stringify(data)
                 };
 
-                const response = await fetch("/comment", options);
+                const response = await fetch(serverid, options);
                 const json = await response.json();
                 console.log(json);
 
@@ -65,7 +63,6 @@ feedbackUI.init = async function () {
                 usercomments.appendChild(commentTemplate);
 
                 name.value = "";
-                email.value = "";
                 feedback.value = "";
                 counterCommentNumber += 1;
                 el("nocomments").textContent = `${comments.length + counterCommentNumber} comments `;

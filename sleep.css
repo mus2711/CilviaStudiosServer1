@@ -245,7 +245,6 @@ button {
     height: 100%;
     object-fit: cover;
 }
-
 #info {
     font-family: "ApercuProBold";
     font-size: 2vw;
@@ -270,13 +269,13 @@ button {
     margin-top: 12vw;
     width: 45%;
     font-family: "ApercuProMedium";
-    font-size: 1.3vw;
+    font-size: 1.15vw;
 }
 #buttonbehance {
     position: absolute;
     margin-left: 48vw;
     top: 0;
-    margin-top: 30vw;
+    margin-top: 37vw;
     width: 15vw;
     height: 3.5vw;
     border-radius: 3vw 3vw 3vw 3vw;
@@ -325,7 +324,6 @@ textarea {
     margin-left: 3.2vw;
     font-weight: bold;
 }
-
 
 
 #name {

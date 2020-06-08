@@ -15,7 +15,6 @@ access.init = function () {
         }
     });
     
-    
     el("tglist").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -59,7 +58,7 @@ access.init = function () {
         switch (key) {
         case 13:
             console.log("enter pressed");
-            document.getElementById("").click();
+            document.getElementById("ub").click();
             break;
         }
     });
@@ -80,6 +79,26 @@ access.init = function () {
         case 13:
             console.log("enter pressed");
             document.getElementById("numberlink").click();
+            break;
+        }
+    });
+
+    el("buttonbehance").addEventListener("keyup", function (e) {
+        var key = e.which || e.keyCode;
+        switch (key) {
+        case 13:
+            console.log("enter pressed");
+            document.getElementById("behancelink").click();
+            break;
+        }
+    });
+
+    el("lets-grab-coffee").addEventListener("keyup", function (e) {
+        var key = e.which || e.keyCode;
+        switch (key) {
+        case 13:
+            console.log("enter pressed");
+            document.getElementById("workingon").click();
             break;
         }
     });
